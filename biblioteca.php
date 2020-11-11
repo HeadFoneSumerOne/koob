@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/17f610ec47.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-    <title>Koob 1</title>
+    <title>Koob</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2b385b">
