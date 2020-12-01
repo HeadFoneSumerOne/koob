@@ -1,3 +1,14 @@
+<?php
+    include("config.php");
+    if(isset($_GET['cat'])){
+        $campo = "genero";
+        $categoria = $_GET['cat'];
+        $busca = new Livro();
+        $busca = $busca->filtro($campo, $categoria);
+
+
+    }
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -10,7 +21,7 @@
     <script src="https://kit.fontawesome.com/17f610ec47.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-    <title>Koob</title>
+    <title>Koob - Acervo</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2b385b">
@@ -36,9 +47,19 @@
                 </li>
             </ul>
 
-            <form class="form-inline">
-                <input class="form-control ml-4 mr-1" type="search" placeholder="Busca">
-                <button class="btn btn-muted" type="Submit"><span style="color: white">
+           <form class="form-inline" method="post">
+              <?php
+              if(isset($_POST['acao'])){ 
+                if(isset($_POST['busca'])){
+                    $campo = "nome_livro";
+                    $titulo = $_POST['busca'];
+                    $busca = new Livro();
+                    $busca = $busca->busca($campo, $titulo);
+                }
+              }
+              ?>
+                <input class="form-control ml-4 mr-1" type="search" name="busca" placeholder="Busca">
+                <button class="btn btn-muted" type="Submit" name="acao"><span style="color: white">
                   <i class="fas fa-search"></i></span></button>
             </form>
         
@@ -50,63 +71,49 @@
     <div class="row" id="filtro">
     <div class="col-2 mt-2 ">
       <p class= "h5">Filtros de busca</p><br>
-      <p><a href="#">Autobiografia</a><br>
-        <a href="#">Biografia</a><br>
-        <a href="#">Didáticos</a><br>
-        <a href="#">Fantasia</a><br>
-        <a href="#">Literatura gótica</a><br>
-        <a href="#">Neocrítica</a><br>
-        <a href="#">Romance</a><br>
-        <a href="#">Vampirismo</a><br>
+      <p>
+        <a href="acervo.php">Todos</a><br>
+        <a href="acervo.php?cat=Administracao">Administração</a><br>
+        <a href="acervo.php?cat=Informatica">Informática</a><br>
+        <a href="acervo.php?cat=Biblioteconomia">Biblioteconomia</a><br>
+        <a href="acervo.php?cat=Enfermagem">Enfermagem</a><br>
     </p>
     </div>
+    <?php
+        $livros = New Livro();
+        $livros = $livros->livros();
+        if(isset($busca))
+            $livros = $busca;
+    ?>
         <div class="col-10">
             <p class="h3">Livros</p>
             <br>
             <div class="row" id="livros">
-            <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top" src="info6.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Informática Para Concursos</h4>
-                    <p>Teoria E Questões Comentadas
-                    Autor: Castilho, Ana Lúcia | Marca: Ferreira</p>
+                    <?php
+                        foreach ($livros as $key => $value) {
+                    ?>
+                    
+                        <div class="col-sm-4 ml-0">
+                            <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src=<?php echo '"./imagens/'.$value['imagem'].'"'; ?>>
+                                <div class="card-body">
+                                    <h4 class="card-title"><?php echo $value['nome_livro']; ?> </h4>
+                                    <p>Autor: <?php echo $value["autor"]; ?> | Editora: <?php echo $value['editora']?></p>
+                                </div>
+                            </div>
+                        </div>
 
-                </div>
+                        </div>
+                    
+                    <?php
+                           
+                        }
+                    ?>    
             </div>
         </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top" src="info9.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Tecnologia da Informação</h4>
-                    <p>Autor: Laurindo, Fernando Jose Barbin | Marca: Atlas Humanas Didático</p>
 
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top" src="adm1.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">O Poder Da Ação - Edição Luxo</h4>
-                    <p>Faça Sua Vida Ideal Sair Do Papel
-                    Autor: Vieira, Paulo | Marca: Gente</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top" src="adm5.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Garra</h4>
-                    <p>o Poder da Paixão e da Perseverança
-                    Autor: Duckworth, Angela | Marca: Intrinseca</p>
-
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div>
 </div>
@@ -125,8 +132,8 @@
     <div class="col-sm-3 ml-5 mt-3">
         <h3>Redes sociais:</h3>
         <div class="social-networks">
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Koob-100708925223834" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/koob.tcc/" class="instagram"><i class="fab fa-instagram"></i></a>
          </div>
     </div>
 
