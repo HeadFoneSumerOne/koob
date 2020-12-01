@@ -22,5 +22,17 @@ class Base extends Conexao
 			$sql->execute($par);
 		return $sql;
 	}
+
+	public function pegar_um($consulta,$par = null){
+		$sql=Parent::conectar()->prepare($consulta);
+		if(is_null($par))
+			$sql->execute();
+		else 
+			$sql->execute($par);
+		if($sql->rowCount() == 1)
+			return $sql->fetch(PDO::FETCH_ASSOC);
+		else
+			return false;
+	}
 }
 ?>
