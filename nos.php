@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/17f610ec47.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-    <title>Koob</title>
+    <title>Koob - Sobre nós</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2b385b">
@@ -36,60 +36,57 @@
                 </li>
             </ul>
 
-            <form class="form-inline">
-                <input class="form-control ml-4 mr-1" type="search" placeholder="Busca">
-                <button class="btn btn-muted" type="Submit"><span style="color: white">
-                  <i class="fas fa-search"></i></span></button>
-            </form>
-        
         </div>
-    </div>
-    </nav>
+        </div>
 
+    </nav>
+    <br>
+    <div class="nos text-secondary ml-5">
+        <h1>Um pouquinho de nós:</h1>
+    </div>
+    <hr>
     <div class="how-section1">
                     <div class="row" id="nos">
                         <div class="col-md-6 how-img">
-                            <img src="beatriz.jpg" class="rounded-circle img-fluid" alt=""/>
+                            <img src="./imagens/beatriz.jpg" class="rounded-circle img-fluid" alt=""/>
                         </div>
                         <div class="col-md-6">
                             <h4>Beatriz Maximiano Batista</h4>
                                         <h4 class="subheading">Designer e programadora</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec ante eu lectus congue scelerisque. Curabitur molestie dolor lacus, nec lobortis enim lobortis vitae. Ut a pharetra lectus. Cras vitae cursus elit. Ut mollis mi vitae ultricies fringilla. Aliquam sapien sem, sollicitudin at luctus eget, volutpat sit amet sapien. Duis eleifend suscipit lobortis.</p>
+                                        <p class="text-muted">Leonina com ascendente em touro. Mulher que conquista onde passa. Sociável e comunicativa, lida muito bem com pessoas e problemas, uma boa líder. Representante de classe durante os três anos do curso, responsável, organizada e querida por todos.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Julia Cunha Tassini</h4>
                                         <h4 class="subheading">Programadora e social media</h4>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec ante eu lectus congue scelerisque. Curabitur molestie dolor lacus, nec lobortis enim lobortis vitae. Ut a pharetra lectus. Cras vitae cursus elit. Ut mollis mi vitae ultricies fringilla. Aliquam sapien sem, sollicitudin at luctus eget, volutpat sit amet sapien. Duis eleifend suscipit lobortis.</p>
+                                        <p class="text-muted">Taurina com ascendente em sagitário. Animada na maior parte do tempo, gosta de fazer os outros rirem e curte uma festinha. É dedicada com os estudos e procura sempre dar o seu melhor em projetos e na escola, gosta de tudo do seu jeitinho.</p>
                         </div>
                         <div class="col-md-6 how-img">
-                            <img src="julia.jpg" class="rounded-circle img-fluid" alt=""/>
+                            <img src="./imagens/julia.jpg" class="rounded-circle img-fluid" alt=""/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 how-img">
-                             <img src="leticia.jpg" class="rounded-circle img-fluid" alt=""/>
+                             <img src="./imagens/leticia.jpg" class="rounded-circle img-fluid" alt=""/>
                         </div>
                         <div class="col-md-6">
                             <h4>Leticia Urbano de Lima Paiva</h4>
                                         <h4 class="subheading">Redatora e responsável pelas pesquisas</h4>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec ante eu lectus congue scelerisque. Curabitur molestie dolor lacus, nec lobortis enim lobortis vitae. Ut a pharetra lectus. Cras vitae cursus elit. Ut mollis mi vitae ultricies fringilla. Aliquam sapien sem, sollicitudin at luctus eget, volutpat sit amet sapien. Duis eleifend suscipit lobortis.</p>
+                                        <p class="text-muted">Geminiana com ascendente em aquário. Perita em dar conselhos. Gosta de ler e escreve muito bem. É responsável e esforçada. Mulher de opinião forte que nunca passa batido. E tem um coração enorme, tipo de mãe, sabe?</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Sabrina Maria Martinez</h4>
                                         <h4 class="subheading">Social media e reponsável pelas pesquisas</h4>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec ante eu lectus congue scelerisque. Curabitur molestie dolor lacus, nec lobortis enim lobortis vitae. Ut a pharetra lectus. Cras vitae cursus elit. Ut mollis mi vitae ultricies fringilla. Aliquam sapien sem, sollicitudin at luctus eget, volutpat sit amet sapien. Duis eleifend suscipit lobortis.</p>
+                                        <p class="text-muted">Geminiana com ascendente em libra. Simpática, fofa e sociavél. Tem um sorriso que contagia. Caprichosa na escola e em trabalhos. Tem um jeitinho único e encantador. Melhor amiga que alguém poderia ter.</p>
                         </div>
                         <div class="col-md-6 how-img">
-                            <img src="sabrina.jpg" class="rounded-circle img-fluid" alt=""/>
+                            <img src="./imagens/sabrina.jpg" class="rounded-circle img-fluid" alt=""/>
                         </div>
                     </div>
                 </div>
-
-
     <br>
 <hr>
 
@@ -104,7 +101,7 @@
     <div class="col-sm-3 ml-5 mt-3">
         <h3>Redes sociais:</h3>
         <div class="social-networks">
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/Koob-100708925223834" class="facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
          </div>
     </div>
