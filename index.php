@@ -5,17 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script src="https://kit.fontawesome.com/17f610ec47.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
     <title>Koob</title>
   </head>
+ 
   <body>
     <?php
       include("config.php");
       ob_start();
+      if(isset($_GET['sair']))
+        Cadastro::sair()
     ?>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2b385b">
         <div class= "container">
@@ -39,13 +42,12 @@
                     <a class="nav-link" href="nos.php">Sobre nós</a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                    <a class="nav-link text-danger" href="index.php?sair">Sair</a>
+                </li>
+            </ul>
 
-            <form class="form-inline">
-                <input class="form-control ml-4 mr-1" type="search" placeholder="Busca">
-                <button class="btn btn-muted" type="Submit"><span style="color: white">
-                  <i class="fas fa-search"></i></span></button>
-            </form>
-        
         </div>
     </div>
     </nav>
@@ -60,13 +62,13 @@
 
         <div class="carousel-inner ">
             <div class="carousel-item active">
-                <img src="carkoob1.png" class="img-fluid d-block">
+                <img src="./imagens/carkoob1.png" class="img-fluid d-block">
         </div>
         <div class="carousel-item">
-                <img src="carkoob2.png" class="img-fluid d-block">
+                <img src="./imagens/carkoob2.png" class="img-fluid d-block">
         </div>
         <div class="carousel-item">
-                <img src="carkoob3.png" class="img-fluid d-block">
+                <img src="./imagens/carkoob3.png" class="img-fluid d-block">
         </div>
 
         <a class="carousel-control-prev" href="#carouselSite" role="button" data-slide="prev">
@@ -83,26 +85,30 @@
 
      <div class="row justify-content-center mb-5 ml-auto mr-auto" id="home">
         <div class="col-sm-3">
+            <a href="acervo.php">
             <div class="card">
                 <i class="fas fa-book"></i>
                 <div class="card-body">
                     <h4 class="card-title">Acervo</h4>
                     <p>Todos os titulos da biblioteca na palma da sua mão</p>
-
                 </div>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-sm-3">
+            <a href="chat.php">
             <div class="card">
                 <i class="fas fa-comment-dots"></i>
-                <div class="card-body">
+                <div class="card-body ">
                     <h4 class="card-title">Chat</h4>
                     <p>Fale com o bibliotecário e verifique a disponibilidade do livro</p>
 
                 </div>
             </div>
+        </a>
         </div>
         <div class="col-sm-3">
+            <a href="biblioteca.php">
             <div class="card">
                 <i class="fas fa-book-reader"></i>
                 <div class="card-body">
@@ -111,12 +117,13 @@
 
                 </div>
             </div>
+        </a>
         </div>
     </div>
     <br>
     <hr>
 
-    <div class="container">
+    <div class="container" id="registro">
     <div class="row justify-content-center">
         <div class="col-8 text-center mb-5">
             <h3 class="display-4"> Faça um cadastro e converse com e bibliotecare da sua instituição.</h3>
@@ -140,25 +147,26 @@
                 <div class="form row">
                     <div class="form-group col-sm-6">
                         <label for="inputNome">Seu nome:</label>
-                        <input type="text" class="form-control" name="nome" id="inputNome" placeholder="Nome">
+                        <input type="text" class="form-control" name="nome" id="inputNome" placeholder="Nome" required>
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label for="inputSobrenome"> Seu sobrenome:</label>
-                        <input type="text" class="form-control" name="sobrenome" id="inputSobrenome" placeholder="Sobrenome">
+                        <input type="text" class="form-control" name="sobrenome" id="inputSobrenome" placeholder="Sobrenome" required>
                     </div>
                     <div class="form-group col-sm-8">
                         <label for="inputEmail"> Seu Email:</label>
-                        <input type="text" class="form-control" name="email" id="inputEmail" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                     </div>
                     <div class="form-group col-sm-4">
                       <label for="inputSenha">Senha:</label>
-                      <input type="password" class="form-control" name="senha" id="inputSenha" placeholder="Senha">
+                      <input type="password" class="form-control" name="senha" id="inputSenha" placeholder="Senha" required>
             
                 </div>
                     <div class="form-row">
                         <div class="col-sm-12 ml-3">
                             <button type="submit" name="acao" class="btn btn-dark">Cadastre-se</button>
+                            <span>Já tem cadastro? Faça <a href="login.php"> login</a></span>
                         </div>
                     </div>
             </form>
@@ -180,8 +188,8 @@
     <div class="col-sm-3 ml-5 mt-3">
         <h3>Redes sociais:</h3>
         <div class="social-networks">
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Koob-100708925223834" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/koob.tcc/" class="instagram"><i class="fab fa-instagram"></i></a>
          </div>
     </div>
 
@@ -190,18 +198,9 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
   </body>
 </html>
