@@ -5,6 +5,7 @@
 body{
 	font-family: 'Montserrat', sans-serif;
 }
+
 .navbar{
 	background-color: #ff717d;
 }
@@ -27,6 +28,10 @@ body{
 	margin-left: 20px;
 	margin-top: 20px;
 }
+#home a{
+    color: black;
+    text-decoration: none !important;
+}
 #home .card{
 	color: #2b385b;
 	margin: 10px 0 0 0;
@@ -36,9 +41,13 @@ body{
   	font-family: 'Montserrat', sans-serif;
 
 }
+#home a:hover{
+    text-decoration:none !important;
+}
 #home .card:hover{
 	transform: scale(1.08);
 }
+
 #filtro .col-2{
 	background-color: #f8f9fa;
 	border-radius: 5px;
@@ -54,11 +63,12 @@ body{
 #acervo .card{
 	color: #2b385b;
 	padding: 5px;
+
 }
 #livros .col-sm-4{
 	color: #2b385b;
 	padding: 5px;
-	margin-left: 10px;
+
 }
 .facebook{
 	font-size: 33px;
@@ -92,6 +102,9 @@ section{
 }
 ::-webkit-scrollbar {
 	width: 2px;
+}
+.seu-nome{
+    color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -160,12 +173,12 @@ ul.list-inline.text-left.d-inline-block.float-left {
 	padding:14px;
 }
 .chat-person-list ul li img{
-	width:30px;
+	width:40px;
 	border-radius:50px;
 }
 
 .chat-person-list ul li span {
-    padding-left: 20px;
+    padding-left: 8px;
 }
 
 .chat-person-list ul li {
@@ -189,7 +202,7 @@ span.chat-time {
 .head-box-1 ul li span{
     color:#fff;
     position:relative;
-    top:-10px;
+    margin-top: 0px;
 }
 .msg_history {
     padding: 10px;
@@ -216,7 +229,7 @@ span.chat-time {
     width: 57%;
 }
 .received_withd_msg p {
-       background: rgba(0,123,255,.5) none repeat scroll 0 0;
+    background: rgba(0,123,255,.5) none repeat scroll 0 0;
     border-radius: 3px;
     color: #ffffff;
     font-size: 14px;
@@ -311,9 +324,11 @@ span.chat-time {
     border-left: 1px solid #9c9a9a;
 }
 .send-message .form-control {
-    border-radius: 50px;
+    border-radius: 15px;
 }
-
+.send-message i{
+    cursor: pointer;
+}
 @media only screen and (max-width: 800px) {
 	
 .message-box {
@@ -327,6 +342,9 @@ span.chat-time {
 
 
 /*-----Inicio sobre nós----*/
+.nos h1{
+    margin-left: 100px;
+}
 .how-section1{
     margin-top:-15%;
     padding: 10%;
@@ -351,4 +369,6 @@ span.chat-time {
 .how-img img{
     width: 40%;
 }
-/* fim sobre nos
+/* fim sobre nos */
+
+
