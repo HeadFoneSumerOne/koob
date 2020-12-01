@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/17f610ec47.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-    <title>Koob</title>
+    <title>Koob - Biblioteca</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2b385b">
@@ -35,12 +35,6 @@
                     <a class="nav-link" href="nos.php">Sobre nós</a>
                 </li>
             </ul>
-
-            <form class="form-inline">
-                <input class="form-control ml-4 mr-1" type="search" placeholder="Busca">
-                <button class="btn btn-muted" type="Submit"><span style="color: white">
-                  <i class="fas fa-search"></i></span></button>
-            </form>
         
         </div>
     </div>
@@ -53,7 +47,7 @@
     </p>
     <p class="lead"> Horários, eventos, cursos...</p>
     <div class="foto-biblio">
-    <span> <img src="est.jpg" width="500px"> <img src="est1.jpg" width="500px" height="280px"> </span>
+    <span> <img src="./imagens/est.jpg" width="500px"> <img src="./imagens/est1.jpg" width="500px" height="280px"> </span>
 </div>
   </div>
 </div>
@@ -73,8 +67,8 @@
     <div class="col-sm-3 ml-5 mt-3">
         <h3>Redes sociais:</h3>
         <div class="social-networks">
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Koob-100708925223834" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/koob.tcc/" class="instagram"><i class="fab fa-instagram"></i></a>
          </div>
     </div>
 
